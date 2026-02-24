@@ -1,0 +1,61 @@
+.verificar-icono {
+  font-size: 48px;
+  text-align: center;
+  animation: flotarIcono 3s ease-in-out infinite;
+}
+
+@keyframes flotarIcono {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.verificar-card {
+  background: var(--carbon-2);
+  border: 1px solid var(--borde);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.verificar-texto {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.6;
+}
+
+.verificar-email {
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+  color: var(--ambar);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.verificar-pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verificar-paso {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--gris-texto);
+}
+
+.verificar-paso-num {
+  width: 24px;
+  height: 24px;
+  background: var(--ambar);
+  color: var(--negro);
+  font-family: var(--fuente-titulo);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

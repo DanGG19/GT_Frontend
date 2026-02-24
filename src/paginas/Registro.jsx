@@ -31,8 +31,8 @@ export default function Registro() {
     setCargando(true)
     try {
       await registrarUsuario(form)
-      sileo.success({ title: '¡Cuenta creada!', description: 'Ya puedes iniciar sesión.' })
-      setTimeout(() => navigate('/login'), 1200)
+      sileo.success({ title: '¡Cuenta creada!', description: 'Revisa tu correo para activarla.' })
+      setTimeout(() => navigate('/verificar', { state: { email: form.email } }), 1200)
     } catch (err) {
       if (err.response?.data) {
         const msg = Object.values(err.response.data).flat().join(' ')
@@ -51,7 +51,7 @@ export default function Registro() {
     <div className="auth-pagina">
       <div className="auth-lado-deco">
         <div className="auth-deco-contenido">
-          <span className="auth-deco-numero">02</span>
+          <span className="auth-deco-numero">V.01</span>
           <h1 className="auth-deco-titulo">Nueva<br /><em>Cuenta</em></h1>
           <p className="auth-deco-sub">Organiza tu vida,<br />una tarea a la vez.</p>
         </div>

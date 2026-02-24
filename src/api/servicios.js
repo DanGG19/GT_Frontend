@@ -1,7 +1,7 @@
 import axios from 'axios'
 import clienteApi from './clienteApi'
 
-const BASE_URL = '/api'
+const BASE_URL = 'https://resistance-sheriff-versions-roles.trycloudflare.com/api'
 
 // ── AUTENTICACIÓN ──
 export async function registrarUsuario({ username, email, password }) {
