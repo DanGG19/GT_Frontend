@@ -1,0 +1,55 @@
+.filtros-barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filtros-busqueda {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  border: 1.5px solid var(--borde);
+  background: var(--carbon-2);
+  transition: border-color var(--transicion);
+}
+
+.filtros-busqueda:focus-within { border-color: var(--ambar); }
+
+.filtros-icono-busqueda {
+  padding: 0 10px;
+  color: var(--gris-suave);
+  font-size: 18px;
+  user-select: none;
+}
+
+.filtros-input-busqueda {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.filtros-input-busqueda:focus { border-color: transparent; }
+
+.filtros-grupo {
+  display: flex;
+  border: 1px solid var(--borde);
+}
+
+.filtros-chip {
+  padding: 7px 14px;
+  font-size: 11px;
+  border: none;
+  border-right: 1px solid var(--borde);
+  color: var(--gris-texto);
+  background: var(--carbon);
+  border-radius: 0;
+}
+
+.filtros-chip:last-child { border-right: none; }
+.filtros-chip:hover:not(.filtros-chip-activo) { background: var(--carbon-2); color: var(--crema); }
+.filtros-chip-activo { background: var(--ambar); color: var(--negro); font-weight: 700; }

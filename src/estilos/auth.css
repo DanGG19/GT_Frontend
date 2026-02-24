@@ -1,0 +1,98 @@
+.auth-pagina { display: flex; min-height: 100vh; }
+
+.auth-lado-deco {
+  position: relative;
+  width: 44%;
+  background: var(--carbon);
+  border-right: 1px solid var(--borde);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 48px;
+}
+
+.auth-deco-contenido { position: relative; z-index: 2; }
+
+.auth-deco-numero {
+  font-family: var(--fuente-cuerpo);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ambar);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.auth-deco-titulo {
+  font-family: var(--fuente-display);
+  font-size: clamp(52px, 6vw, 80px);
+  font-weight: 300;
+  color: var(--crema);
+  line-height: 1.0;
+  margin-bottom: 20px;
+}
+
+.auth-deco-titulo em { font-style: italic; color: var(--ambar); }
+
+.auth-deco-sub { font-size: 13px; color: var(--gris-texto); line-height: 1.6; }
+
+.auth-deco-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--borde-suave) 1px, transparent 1px),
+    linear-gradient(90deg, var(--borde-suave) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.auth-lado-deco::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 70%, rgba(245,166,35,0.06) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.auth-lado-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.auth-form-contenedor {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.auth-encabezado { display: flex; flex-direction: column; gap: 6px; }
+
+.auth-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ambar);
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+}
+
+.auth-titulo { font-size: 28px; color: var(--crema); }
+
+.auth-form { display: flex; flex-direction: column; gap: 18px; }
+
+.auth-btn { margin-top: 8px; width: 100%; justify-content: center; padding: 14px 24px; }
+
+.auth-pie { text-align: center; font-size: 13px; color: var(--gris-texto); }
+
+.auth-enlace { color: var(--ambar); font-weight: 500; transition: color var(--transicion); }
+.auth-enlace:hover { color: var(--ambar-claro); text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .auth-lado-deco { display: none; }
+  .auth-lado-form { padding: 32px 20px; }
+}

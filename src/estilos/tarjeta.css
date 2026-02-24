@@ -1,0 +1,93 @@
+.tarjeta-tarea {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--borde);
+  background: var(--carbon);
+  transition: border-color var(--transicion), background var(--transicion);
+  animation: aparecerTarjeta 0.2s ease;
+}
+
+@keyframes aparecerTarjeta {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta-tarea:hover { border-color: var(--gris-suave); background: var(--carbon-2); }
+.tarjeta-completada { opacity: 0.6; }
+.tarjeta-vencida { border-color: rgba(224,82,82,0.3); }
+
+.tarjeta-indicador { width: 3px; flex-shrink: 0; }
+.tarjeta-indicador-ALTA  { background: var(--rojo); }
+.tarjeta-indicador-MEDIA { background: var(--ambar); }
+.tarjeta-indicador-BAJA  { background: var(--verde); }
+
+.tarjeta-cuerpo {
+  flex: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.tarjeta-fila-superior { display: flex; align-items: flex-start; gap: 12px; }
+
+.tarjeta-check {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--borde);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--verde);
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: border-color var(--transicion), background var(--transicion);
+}
+
+.tarjeta-check:hover:not(:disabled) { border-color: var(--ambar); }
+.tarjeta-check-activo { border-color: var(--verde); background: rgba(82,196,138,0.12); }
+.tarjeta-check:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.tarjeta-info { flex: 1; min-width: 0; }
+
+.tarjeta-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--crema);
+  word-break: break-word;
+  margin-bottom: 4px;
+}
+
+.tarjeta-titulo-completado { text-decoration: line-through; color: var(--gris-suave); }
+
+.tarjeta-descripcion {
+  font-size: 13px;
+  color: var(--gris-texto);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tarjeta-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.tarjeta-fecha { font-size: 11px; color: var(--gris-texto); font-family: var(--fuente-cuerpo); margin-left: auto; }
+.tarjeta-fecha-vencida { color: var(--rojo); }
+
+.tarjeta-acciones {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--borde-suave);
+  padding: 8px 4px;
+  opacity: 0;
+  transition: opacity var(--transicion);
+}
+
+.tarjeta-tarea:hover .tarjeta-acciones { opacity: 1; }
+.tarjeta-btn-eliminar { color: var(--rojo) !important; }
