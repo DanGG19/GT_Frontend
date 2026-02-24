@@ -27,8 +27,16 @@ export default function Login() {
       sileo.success({ title: '¡Bienvenido!', description: 'Sesión iniciada correctamente.' })
       setTimeout(() => navigate('/tareas'), 1000)
     } catch (err) {
+      const msg = err.response?.data?.detail || ''
       if (err.response?.status === 401 || err.response?.status === 400) {
-        sileo.error({ title: 'Credenciales incorrectas', description: 'Verifica tu usuario y contraseña.' })
+        if (msg.toLowerCase().includes('activ') || msg.toLowerCase().includes('active')) {
+          sileo.warning({
+            title: 'Cuenta no activada',
+            description: 'Revisa tu correo y confirma tu cuenta antes de iniciar sesión.'
+          })
+        } else {
+          sileo.error({ title: 'Credenciales incorrectas', description: 'Verifica tu usuario y contraseña.' })
+        }
       } else if (!err.response) {
         sileo.error({ title: 'Sin conexión', description: '¿Está corriendo el backend?' })
       } else {
@@ -43,9 +51,9 @@ export default function Login() {
     <div className="auth-pagina">
       <div className="auth-lado-deco">
         <div className="auth-deco-contenido">
-          <span className="auth-deco-numero">v01</span>
+          <span className="auth-deco-numero">V.01</span>
           <h1 className="auth-deco-titulo">Ges<br /><em>Task</em></h1>
-          <p className="auth-deco-sub">Sistema de gestión<br />de tareas jexual.</p>
+          <p className="auth-deco-sub">Sistema de gestión<br />de tareas zzz.</p>
         </div>
         <div className="auth-deco-grid" aria-hidden="true" />
       </div>

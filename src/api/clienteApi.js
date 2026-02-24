@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { sileo } from 'sileo'
 
-const BASE_URL = '/api'
+const BASE_URL = 'https://resistance-sheriff-versions-roles.trycloudflare.com/api'
 
 const clienteApi = axios.create({
   baseURL: BASE_URL,
