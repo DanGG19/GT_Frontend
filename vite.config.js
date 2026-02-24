@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
 
-    // Temporal para desarrollo con quick tunnels (cambian seguido)
+  
     allowedHosts: true,
 
     hmr: {
